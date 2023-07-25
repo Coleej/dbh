@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% if title %}
+	<title>{{ title }} - DBH Logs</title>
+	{% else %}
+	<title>Welcome to the DBH Logs</title>
+	{% endif %}
+</head>
+</body>
+<div>
+	DBH Logs:
+	<a href="{{ url_for(" index") }}">Home</a>
+	<a href="{{ url_for(" login") }}">Login</a>
+</div>
+<hr>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+	{% for messages in messages %}<li>{{ messages }}</li>{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% block content %}{% endblock %}
+</body>
+
+</html>
+<!-- vim: ft=htmldjango -->

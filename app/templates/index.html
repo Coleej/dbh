@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+    {% if username %}
+        <div>
+            Welcome to the DBH Logs!
+            Hello {{ username }}
+        </div>
+    {% else %}
+        <div>
+            Welcome to the DBH Logs!
+            Get a login!
+        </div>
+    {% endif %}
+{% endblock %}
